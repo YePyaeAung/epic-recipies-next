@@ -16,7 +16,7 @@ import Link from "next/link";
 const Header = () => {
     const { setTheme } = useTheme();
     return (
-        <nav className="flex items-center justify-between py-2 mb-16">
+        <nav className="flex items-center justify-between py-2 mb-16 sticky top-0 z-50 border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
             <Link href={"/"} className="text-xl font-bold">
                 EPIC RECIPES
             </Link>
