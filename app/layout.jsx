@@ -15,18 +15,21 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={inter.className}>
-                <div className="mx-4 m-auto">
+                <div className="h-10 bg-gray-800 dark:bg-slate-800 py-2 pe-2">
+                    <p className="text-end text-slate-300 pt-1">
+                        Call us: 081-234-5678
+                    </p>
+                </div>
+                <div className="max-w-6xl mx-auto flex flex-col min-h-screen">
                     <ThemeProvider
                         attribute="class"
                         defaultTheme="system"
                         enableSystem
                         disableTransitionOnChange
                     >
-                        <main className="max-w-6xl mx-auto">
-                            <Header />
-                            {children}
-                            <Footer />
-                        </main>
+                        <Header />
+                        <main>{children}</main>
+                        <Footer />
                     </ThemeProvider>
                 </div>
             </body>
