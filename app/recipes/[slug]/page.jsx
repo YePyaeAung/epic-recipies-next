@@ -45,7 +45,7 @@ const RecipePage = ({ params }) => {
     const { slug } = params;
     const recipe = getContent(slug);
     return (
-        <section className="markdown-content pb-10">
+        <section className="w-5/6 mx-auto markdown-content pb-10">
             <Markdown>{recipe.content}</Markdown>
         </section>
     );
