@@ -1,3 +1,4 @@
+import getRecipesMetaData from "@/lib/getRecipesMetaData";
 import fs from "fs";
 import matter from "gray-matter";
 import Markdown from "markdown-to-jsx";
@@ -16,14 +17,36 @@ const getContent = slug => {
     return result;
 };
 
+export async function generateMetadata({ params }) {
+    const slug = params.slug;
+
+    const title = slug
+        ? `Epic Recipes - ${slug
+              .replace(/_/g, " ")
+              .split(" ")
+              .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(" ")}`
+        : "";
+
+    return {
+        title,
+    };
+}
+
+export async function generateStaticParams() {
+    const recipes = getRecipesMetaData("recipes");
+
+    return recipes.map(recipe => ({
+        slug: recipe.slug,
+    }));
+}
+
 const RecipePage = ({ params }) => {
     const { slug } = params;
     const recipe = getContent(slug);
-    console.log(recipe);
     return (
         <section className="markdown-content pb-10">
             <Markdown>{recipe.content}</Markdown>
-            <hr className="mt-5" />
         </section>
     );
 };
