@@ -4,7 +4,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
 import Link from "next/link";
 
 const RecipeCard = ({ recipe }) => {
-    const { title, cook_time, author, created_at, description } = recipe;
+    const { title, cook_time, author, created_at, description, slug } = recipe;
     return (
         <Card className="my-4">
             <CardHeader>
@@ -29,7 +29,10 @@ const RecipeCard = ({ recipe }) => {
                         <Clock className="w-4 h-4 me-1" />
                         <p className="text-xs">{cook_time}</p>
                     </Badge>
-                    <Link href={"/"} className="flex items-center gap-1">
+                    <Link
+                        href={`/recipes/${slug}`}
+                        className="flex items-center gap-1 hover:underline"
+                    >
                         <p>Read more</p>
                         <ArrowUpRight className="w-4 h-4" />
                     </Link>
