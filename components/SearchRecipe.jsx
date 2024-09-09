@@ -4,7 +4,7 @@ import { Input } from "./ui/input";
 
 const SearchRecipe = ({ searchValue, setSearchValue }) => {
     return (
-        <div className="relative w-1/2 mb-5 ml-auto">
+        <div className="relative w-full md:w-1/2 mb-5 ml-auto">
             <Input
                 placeholder="search recipe..."
                 value={searchValue}

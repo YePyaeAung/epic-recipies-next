@@ -8,13 +8,13 @@ const RecipeCard = ({ recipe }) => {
     return (
         <Card className="my-4">
             <CardHeader>
-                <p className="text-lg font-bold my-2">{title}</p>
-                <div className="md:flex items-center gap-2">
-                    <Badge className="mb-4 sm:mb-0">
+                <p className="md:text-lg font-bold my-2">{title}</p>
+                <div className="flex items-center gap-2 flex-wrap">
+                    <Badge variant="secondary">
                         <User className="w-4 h-4 me-1" />
                         <p className="text-xs">{author}</p>
                     </Badge>
-                    <Badge>
+                    <Badge variant="secondary">
                         <CalendarDays className="w-4 h-4 me-1" />
                         <p className="text-xs">{created_at}</p>
                     </Badge>
@@ -25,7 +25,7 @@ const RecipeCard = ({ recipe }) => {
             </CardContent>
             <CardFooter>
                 <div className="sm:flex items-center justify-between w-full">
-                    <Badge className="w-fit mb-4 sm:mb-0">
+                    <Badge variant="secondary" className="w-fit mb-4 sm:mb-0">
                         <Clock className="w-4 h-4 me-1" />
                         <p className="text-xs">{cook_time}</p>
                     </Badge>
@@ -33,7 +33,7 @@ const RecipeCard = ({ recipe }) => {
                         href={`/recipes/${slug}`}
                         className="flex items-center gap-1 hover:underline"
                     >
-                        <p>Read more</p>
+                        <p className="font-bold">Read more</p>
                         <ArrowUpRight className="w-4 h-4" />
                     </Link>
                 </div>
