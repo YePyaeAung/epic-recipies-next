@@ -63,11 +63,39 @@ const RecipePage = ({ params }) => {
                     </Button>
                 </Link>
             </div>
-            <div className="grid grid-cols-3 gap-6">
-                <div className="markdown-content col-span-2">
+            <div className="md:grid md:grid-cols-3 gap-6">
+                <div className="markdown-content md:col-span-2">
+                    <Card className="p-6 md:hidden mb-3">
+                        <div className="flex items-center gap-3 flex-wrap">
+                            <Badge
+                                variant="secondary"
+                                className="flex items-center gap-1"
+                            >
+                                <User className="h-3 w-3" />
+                                <span>{author}</span>
+                            </Badge>
+                            <Badge
+                                variant="secondary"
+                                className="flex items-center gap-1"
+                            >
+                                <CalendarDays className="h-3 w-3" />
+                                <span>{created_at}</span>
+                            </Badge>
+                            <Badge
+                                variant="secondary"
+                                className="flex items-center gap-1"
+                            >
+                                <Clock className="h-3 w-3" />
+                                <span>{cook_time}</span>
+                            </Badge>
+                        </div>
+                        <p className="text-sm font-medium mt-3">
+                            {description}
+                        </p>
+                    </Card>
                     <Markdown>{recipe.content}</Markdown>
                 </div>
-                <div className="col-span-1">
+                <div className="md:col-span-1 hidden md:block">
                     <Card className="p-6">
                         <div className="flex items-center gap-3 flex-wrap">
                             <Badge
