@@ -17,7 +17,7 @@ const Header = () => {
     const { setTheme } = useTheme();
     return (
         <nav className="flex items-center justify-between py-2 mb-16 sticky top-0 z-50 border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/50">
-            <Link href={"/"} className="text-xl font-bold">
+            <Link href={"/"} className="md:text-xl font-bold">
                 EPIC RECIPES
             </Link>
             <DropdownMenu>

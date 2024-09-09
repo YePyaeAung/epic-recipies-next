@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
                         Call us: 081-234-5678
                     </p>
                 </div>
-                <div className="max-w-6xl mx-auto flex flex-col min-h-screen">
+                <div className="max-w-6xl mx-auto flex flex-col min-h-screen px-2">
                     <ThemeProvider
                         attribute="class"
                         defaultTheme="system"
